@@ -1,0 +1,24 @@
+application: nareshwadiwohlig
+version: 1
+runtime: php
+api_version: 1
+threadsafe: yes
+
+handlers:
+- url: /css
+  static_dir: css
+  
+- url: /img
+  static_dir: img
+  
+- url: /js
+  static_dir: js
+  
+- url: /lib
+  static_dir: lib
+  
+- url: /views
+  static_dir: views  
+
+- url: /.*
+  script: index.html

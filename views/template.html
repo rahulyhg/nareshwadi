@@ -1,0 +1,47 @@
+        <div class="maincontent">
+            <div class="container">
+                <div class="header">
+                    <div ng-click="template.changelanguage('english');" class="language english {{template.englishactive}} animated fadeInRight">English</div><div ng-click="template.changelanguage('marathi');" class="language marathi {{template.marathiactive}} animated fadeInRight">मराठी</div>
+                    <div class="logo animated fadeInLeft">
+                        
+                        
+                        <div ng-show="template.englishactive=='active'">
+						<a href="#/home">
+						<h1>Nareshwadi School</h1>
+                        <h5>Unless you look for a way you can not find it.</h5>
+						</a>
+						</div>
+                        
+                        <div ng-show="template.marathiactive=='active'">
+						<a href="#/home"><h1>नारेश्वादी विद्यालय</h1>
+                        <h5>आपण एक मार्ग शोधत नाही तोपर्यंत आपण सापडत नाही.</h5>
+						</a>
+						</div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="navigation {{navigationclass}} animated fadeInLeft">
+                <div class="circle1">
+                    <div class="innercircle">
+                        <div class="nav1" ng-repeat="menu in navigation" style="left:{{menu.text_left}};top:{{menu.text_top}};"> <a href="{{menu.link}}" class="nav2" style="color:{{menu.color}};"><span class="glyphicon glyphicon-fire"></span> <span ng-show="template.englishactive=='active'">{{menu.name}}</span><span ng-show="template.marathiactive=='active'">{{menu.marathiname}}</span></a> </div>
+                    </div>
+                </div>
+                <div class="circle2">
+                    <div class="innercircle">
+                        <div class="nav1" ng-repeat="menu in navigation" style="left:{{menu.left}};top:{{menu.top}};"> <a href="{{menu.link}}"><span class="glyphicon {{menu.icon}}"></span></a> </div>
+              
+                        <div class="circle3">
+                            <div class="innercircle"> <img src="img/logo.png" /> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <div class="container">
+                    <div ng-include="template.content"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer"><div class="container"><p>Copyright 2014 Somaiya Trust. All Rights Reserved.</p></div> </div>

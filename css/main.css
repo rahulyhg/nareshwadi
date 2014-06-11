@@ -1,69 +1,108 @@
+@import url(http://fonts.googleapis.com/css?family=Allura);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,700);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700);
+body {
+    font-family: "Open Sans";
+}
 .header {
-	text-align:center;
+    text-align: center;
+}
+h3,
+.h3 {
+    font-size: 19px;
+    font-weight: bold;
+}
+a {
+    color:#AE0019;
+}
+a:hover {
+    color:#AE0019;
+}
+.logo a:hover{
+	text-decoration:none;
+}
+.homemod a {
+    text-decoration: none;
+}
+.homemod p {
+    color:#007A31;
+    font-size: 13px;
+}
+p {
+    font-size: 12px;
+    line-height: 180%;
+    text-align: justify;
+}
+.navigation.smaller {
+    margin-left: 2%;
+    zoom: 55%;
+    margin-top: -218px;
+}
+.navigation.smaller .circle1 {
+    opacity: 1;
 }
 .logo h1 {
-	font-family: 'Allura', cursive;
-	font-size: 63px;
-	color: #ae0019;
-	font-weight: normal;
+    font-family: 'Allura', cursive;
+    font-size: 63px;
+    color: #ae0019;
+    font-weight: normal;
 }
 .logo h5 {
-font-family: 'Allura', cursive;
-font-size: 29px;
-color: #027c31;
-margin-top: -15px;
-font-weight: normal;
+    font-family: 'Allura', cursive;
+    font-size: 29px;
+    color: #027c31;
+    margin-top: -15px;
+    font-weight: normal;
 }
 .navigation {
-	position:relative;
-	
+    position: relative;
 }
 .navigation .circle1 {
-	position:relative;
-	width:550px;
-	margin: 0 auto;
+    position: relative;
+    width: 550px;
+    margin: 0 auto;
 }
 .nav1 {
-	text-align:center;
+    text-align: center;
 }
-
 .navigation .circle1 .nav1 {
-	position:absolute;
-	min-width: 100px;
+    position: absolute;
+    min-width: 100px;
 }
-.circle1, .circle2, .circle3 {
-	position:absolute;
+.circle1,
+.circle2,
+.circle3 {
+    position: absolute;
 }
 .innercircle {
-	position:relative;
-	border-radius: 100%;
+    position: relative;
+    border-radius: 100%;
 }
-
 .circle2 {
-	background: #ae0019;
-	border-radius:100%;	
-	width:330px;
-	height:330px;
-	left: 193px;
-	top: 109px;
-	box-shadow: 3px 3px 15px 1px #333;
+    background: #ae0019;
+    border-radius: 100%;
+    width: 330px;
+    height: 330px;
+    left: 193px;
+    top: 109px;
+    box-shadow: 3px 3px 15px 1px #333;
 }
 .navigation .circle2 .nav1 {
-	position:absolute;
+    position: absolute;
 }
 .navigation .circle2 .nav1 a {
-	color:#e07000;
-	font-size:40px;
-	-webkit-transition: all 1s;
-	text-shadow: 3px 3px 12px #111;
+    color: #e07000;
+    font-size: 40px;
+    -webkit-transition: all 1s;
+    text-shadow: 3px 3px 12px #111;
 }
 .navigation {
-position: relative;
-width: 700px;
-margin: 0 auto;
-min-height: 530px;
-margin-top: -25px;
--webkit-transition: all 1s;
+    position: relative;
+    width: 700px;
+    margin: 0 auto;
+    min-height: 530px;
+    margin-top: -25px;
+    -webkit-transition: all 1s;
 }
 div.circle3 {
     left: 70px;
@@ -79,17 +118,16 @@ div.circle3 {
     text-shadow: none;
 }
 .circle1 .nav1 a {
-color: #007A31;
-font-family: "Open Sans";
-font-weight: bold;
-font-size: 18px;
--webkit-transition:all 1s;
-min-width: 100px;
+    color: #007A31;
+    font-family: "Open Sans";
+    font-weight: bold;
+    font-size: 18px;
+    -webkit-transition: all 1s;
+    min-width: 100px;
 }
 .circle1 .nav1 a:hover {
-	text-shadow: 1px 1px 6px #aaa;
-	
-	text-decoration: none;
+    text-shadow: 1px 1px 6px #aaa;
+    text-decoration: none;
 }
 div.maincontent {
     background: url("../img/bricks.jpg");
@@ -97,62 +135,101 @@ div.maincontent {
     background-attachment: fixed;
 }
 .img {
-	width:100%;
+    width: 100%;
 }
-@-webkit-keyframes rotations
-{
-from {transform:rotate(2deg);
--ms-transform:rotate(2deg); /* IE 9 */
--webkit-transform:rotate(2deg);}
-to {transform:rotate(-2deg);
--ms-transform:rotate(-2deg); /* IE 9 */
--webkit-transform:rotate(-2deg);}
+@-webkit-keyframes rotations {
+    from {
+        transform: rotate(2deg);
+        -ms-transform: rotate(2deg);
+        /* IE 9 */
+        -webkit-transform: rotate(2deg);
+    }
+    to {
+        transform: rotate(-2deg);
+        -ms-transform: rotate(-2deg);
+        /* IE 9 */
+        -webkit-transform: rotate(-2deg);
+    }
 }
-
 /* Standard syntax */
-@keyframes rotations
-{
-from {transform:rotate(2deg);
--ms-transform:rotate(2deg); /* IE 9 */
--webkit-transform:rotate(2deg);}
-to {transform:rotate(-2deg);
--ms-transform:rotate(-2deg); /* IE 9 */
--webkit-transform:rotate(-2deg);}
+
+@keyframes rotations {
+    from {
+        transform: rotate(2deg);
+        -ms-transform: rotate(2deg);
+        /* IE 9 */
+        -webkit-transform: rotate(2deg);
+    }
+    to {
+        transform: rotate(-2deg);
+        -ms-transform: rotate(-2deg);
+        /* IE 9 */
+        -webkit-transform: rotate(-2deg);
+    }
 }
 div.footer {
-background: rgb(41, 41, 41);
+    background: rgb(41, 41, 41);
 }
 .footer p {
-color: white;
-margin-top: 10px;
-font-size: 12px;
+    color: white;
+    margin-top: 10px;
+    font-size: 12px;
 }
 .content {
-min-height:500px;
+    min-height: 500px;
 }
 .internalpage {
-
-background:rgba(220, 109, 0, 0.17);
-border-radius:25px;
+    background: rgba(220, 109, 0, 0.06);
+    border-radius: 4px;
+    margin-bottom: 30px;
+    box-shadow: 2px 2px 15px #888;
 }
 .internalpage .internal {
-padding:25px;
+    padding: 25px;
 }
-.internalpage .internal h2{
-	color:#AE0019;
-	font-size:40px;
-	font-family: 'Allura', cursive;
+.internalpage .internal h2 {
+    color: #AE0019;
+    font-size: 40px;
+    font-family: 'Allura', cursive;
 }
-.internalpage .internal p{
-line-height: 200%;
-font-size: 14px;
-color: #007931;
-font-weight: bold;
+.internalpage .internal p {
+    line-height: 200%;
+    font-size: 15px;
+    color: #007931;
+    font-weight: 300;
 }
-.internal p strong,.internal h4,.internal h5 {
-    color: #AE0019;  
-    font-size: 29px;  font-family: 'Allura', cursive;
+.internal p strong,
+.internal h4,
+.internal h5 {
+    color: #AE0019;
+    font-size: 29px;
+    font-family: 'Allura', cursive;
+    font-weight: bold;
+    letter-spacing: 2px;
 }
 .internal ul li {
     color: #007931;
 }
+.language {
+    position: absolute;
+    right: 20px;
+    font-family: "Open Sans";
+    font-size: 12px;
+    background: #027c31;
+    padding: 15px;
+    margin-right: 10px;
+    border-radius: 33px;
+    color:white;
+    z-index: 10;
+    cursor:pointer;
+}
+.container {
+    position: relative;
+}
+.language.english {
+    right: 94px;
+}
+
+.language:hover,.language.active {
+    background:#ae0019;
+} 
