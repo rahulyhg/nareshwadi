@@ -7,8 +7,9 @@ phonecatControllers.controller('home', ['$scope', 'TemplateService', 'Navigation
         $scope.menutitle = NavigationService.makeactive("Home");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
-        $scope.navigationclass = "";
+        $scope.navigationclass = "smaller";
   }]);
+
 phonecatControllers.controller('shop', ['$scope', 'TemplateService', 'NavigationService',
 function ($scope, TemplateService, NavigationService) {
         $scope.template = TemplateService;
@@ -35,15 +36,8 @@ function ($scope, TemplateService, NavigationService) {
             NavigationService.getallproductsincategory(id).success(productfetched);
         };
 
+}]);
 
-
-
-
-
-
-
-
-                                        }]);
 phonecatControllers.controller('contact', ['$scope', 'TemplateService', 'NavigationService',
                                         function ($scope, TemplateService, NavigationService) {
         $scope.template = TemplateService;
@@ -182,4 +176,17 @@ phonecatControllers.controller('about', ['$scope', 'TemplateService', 'Navigatio
 phonecatControllers.controller('headerctrl', ['$scope', 'TemplateService',
  function ($scope, TemplateService) {
         $scope.template = TemplateService;
+  }]);
+
+phonecatControllers.controller('slidectrl', ['$scope', 'TemplateService',
+ function ($scope, TemplateService) {
+        $scope.template = TemplateService;
+             $scope.myInterval = 5000;
+     var slides = $scope.slides = [{
+         image: "img/bg1.jpg"
+     }, {
+         image: "img/bg2.jpg"
+     }];
+
+
   }]);

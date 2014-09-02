@@ -277,3 +277,24 @@ ul.gallerycat li {
     text-align: center;
     cursor: pointer;
 }
+q {
+    font-family: 'Allura', cursive;
+    font-size: 30px;
+    color: #ae0019;
+    quotes: "“""”""‘""’";
+    padding: 0px 20px;
+}
+q:before {
+    content: open-quote;
+}
+q:after {
+    content: close-quote;
+}
+.quotes {
+    position: absolute;
+    left: 400px;
+    margin-top: 55px;
+}
+.slider {
+    margin: 10px 0 30px;
+}
