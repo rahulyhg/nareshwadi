@@ -41,14 +41,14 @@ firstapp.config(['$routeProvider',
             templateUrl: 'views/template.html',
             controller: 'about'
         }).
-      
+
         otherwise({
             redirectTo: '/home'
         });
   }]);
 
-firstapp.filter('unsafe', function($sce) {
-    return function(val) {
+firstapp.filter('unsafe', function ($sce) {
+    return function (val) {
         return $sce.trustAsHtml(val);
     };
 });

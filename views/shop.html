@@ -1,0 +1,14 @@
+<div class="internalpage animated slideInRight">
+    <div class="internal">
+        
+        
+        <ul class="nav nav-pills categorynav">
+            
+            <li ng-class="" ng-repeat="category in content"><a ng-click="fetchproducts(category.ProductCategoryID)">{{category.Name}}</a></li>
+        </ul>
+        <div>
+        <div ng-repeat="product in products">
+            {{product.Product}}
+        </div>
+    </div>
+</div>

@@ -1,7 +1,7 @@
 var phonecatControllers = angular.module('phonecatControllers', ['templateservicemod', 'navigationservice']);
 
 phonecatControllers.controller('home', ['$scope', 'TemplateService', 'NavigationService',
-  function ($scope, TemplateService, NavigationService,$location) {
+  function ($scope, TemplateService, NavigationService, $location) {
         $scope.template = TemplateService;
         TemplateService.content = "views/content.html";
         $scope.menutitle = NavigationService.makeactive("Home");
@@ -10,22 +10,39 @@ phonecatControllers.controller('home', ['$scope', 'TemplateService', 'Navigation
         $scope.navigationclass = "";
   }]);
 phonecatControllers.controller('shop', ['$scope', 'TemplateService', 'NavigationService',
-                                        function ($scope, TemplateService, NavigationService) {
+function ($scope, TemplateService, NavigationService) {
         $scope.template = TemplateService;
-        TemplateService.content = "views/internalcontent.html";
+        TemplateService.content = "views/shop.html";
         $scope.menutitle = NavigationService.makeactive("Home");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
-        
+
         $scope.navigationclass = "smaller";
-        var articlesuccess = function (data, status) {
+        var categorysuccess = function (data, status) {
             var newdata = JSON.parse(data.d)
             console.log(newdata);
             $scope.content = newdata;
-
-
         };
-        NavigationService.getarticle(4).success(articlesuccess);
+
+        NavigationService.getallproductcategory().success(categorysuccess);
+
+        var productfetched = function (data, status) {
+            var newdata = JSON.parse(data.d)
+            console.log(newdata);
+            $scope.products = newdata;
+        };
+        $scope.fetchproducts = function (id) {
+            NavigationService.getallproductsincategory(id).success(productfetched);
+        };
+
+
+
+
+
+
+
+
+
                                         }]);
 phonecatControllers.controller('contact', ['$scope', 'TemplateService', 'NavigationService',
                                         function ($scope, TemplateService, NavigationService) {
@@ -34,35 +51,60 @@ phonecatControllers.controller('contact', ['$scope', 'TemplateService', 'Navigat
         $scope.menutitle = NavigationService.makeactive("Home");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
-      
+
         $scope.navigationclass = "smaller";
         var articlesuccess = function (data, status) {
-            var newdata = JSON.parse(data.d)
+            var newdata = JSON.parse(data.d);
             console.log(newdata);
             $scope.content = newdata;
-
-
         };
         NavigationService.getarticle(6).success(articlesuccess);
                                         }]);
 phonecatControllers.controller('gallery', ['$scope', 'TemplateService', 'NavigationService',
                                         function ($scope, TemplateService, NavigationService) {
         $scope.template = TemplateService;
-        TemplateService.content = "views/internalcontent.html";
+        TemplateService.content = "views/gallery.html";
         $scope.menutitle = NavigationService.makeactive("Home");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
-       
+
         $scope.navigationclass = "smaller";
-        var articlesuccess = function (data, status) {
+        var gotgallerycategory = function (data, status) {
             var newdata = JSON.parse(data.d)
             console.log(newdata);
             $scope.content = newdata;
+            $scope.fetchproducts(newdata[0].GalleryID, newdata[0].Title,0);
+            
+        };
+        NavigationService.getgallerycategory().success(gotgallerycategory);
+        $scope.blackoutimage = "";
+        $scope.addblackout = function (img) {
+            $scope.blackoutimage = img;
+        }
+        $scope.removeblackout = function () {
+            $scope.blackoutimage = "";
+        }
 
+        var gotgalleryimages = function (data, status) {
+            var newdata = JSON.parse(data.d)
+            console.log(newdata);
+            $scope.galleryimages = newdata;
 
         };
-        NavigationService.getarticle(7).success(articlesuccess);
-                                        }]);
+
+        $scope.fetchproducts = function (category, title,id) {
+            for(var i=0;i<$scope.content.length;i++)
+            {$scope.content[i].active="";}
+            
+            $scope.content[id].active="active";
+            
+            $scope.GalleryTitle = title;
+            NavigationService.getcategoryimage(category).success(gotgalleryimages);
+        };
+
+
+
+}]);
 phonecatControllers.controller('donate', ['$scope', 'TemplateService', 'NavigationService',
                                            function ($scope, TemplateService, NavigationService) {
         $scope.template = TemplateService;
@@ -70,10 +112,10 @@ phonecatControllers.controller('donate', ['$scope', 'TemplateService', 'Navigati
         $scope.menutitle = NavigationService.makeactive("Home");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
-    
+
         $scope.navigationclass = "smaller";
         var articlesuccess = function (data, status) {
-            var newdata = JSON.parse(data.d)
+            var newdata = JSON.parse(data.d);
             console.log(newdata);
             $scope.content = newdata;
 
@@ -89,7 +131,7 @@ phonecatControllers.controller('futureproject', ['$scope', 'TemplateService', 'N
         $scope.menutitle = NavigationService.makeactive("Home");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
-       
+
         $scope.navigationclass = "smaller";
         var articlesuccess = function (data, status) {
             var newdata = JSON.parse(data.d)
@@ -107,7 +149,7 @@ phonecatControllers.controller('whatwedo', ['$scope', 'TemplateService', 'Naviga
         $scope.menutitle = NavigationService.makeactive("Home");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
-      
+
         $scope.navigationclass = "smaller";
         var articlesuccess = function (data, status) {
             var newdata = JSON.parse(data.d)
@@ -125,7 +167,7 @@ phonecatControllers.controller('about', ['$scope', 'TemplateService', 'Navigatio
         $scope.menutitle = NavigationService.makeactive("Home");
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
-       
+
         $scope.navigationclass = "smaller";
         var articlesuccess = function (data, status) {
             var newdata = JSON.parse(data.d)

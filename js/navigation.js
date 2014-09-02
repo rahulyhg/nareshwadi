@@ -1,11 +1,11 @@
 var navigationservice = angular.module('navigationservice', [])
 
 .factory('NavigationService', function ($http) {
-    
-    var navigationclass="";
+
+    var navigationclass = "";
     var navigation = [{
             name: "Home",
-        marathiname:"मुख्य पान",
+            marathiname: "मुख्य पान",
             classis: "active",
             link: "#/home",
             color: "rgb(174, 0, 25)",
@@ -18,7 +18,7 @@ var navigationservice = angular.module('navigationservice', [])
 
     }, {
             name: "Shop",
-        marathiname:"दुकान",
+            marathiname: "दुकान",
             active: "",
             link: "#/shop",
             color: "#007A31",
@@ -31,7 +31,7 @@ var navigationservice = angular.module('navigationservice', [])
 
     }, {
             name: "Contact",
-        marathiname:"संबंध",
+            marathiname: "संबंध",
             classis: "",
             link: "#/contact",
             color: "rgb(174, 0, 25)",
@@ -43,7 +43,7 @@ var navigationservice = angular.module('navigationservice', [])
 
     }, {
             name: "Gallery",
-        marathiname:"प्रतिमा",
+            marathiname: "प्रतिमा",
             classis: "",
             link: "#/gallery",
             color: "#007A31",
@@ -55,7 +55,7 @@ var navigationservice = angular.module('navigationservice', [])
 
     }, {
             name: "Donate",
-        marathiname:"दान",
+            marathiname: "दान",
             classis: "",
             link: "#/donate",
             color: "rgb(174, 0, 25)",
@@ -67,21 +67,21 @@ var navigationservice = angular.module('navigationservice', [])
 
     },
         {
-            name: "Future Project",
-            marathiname:"भविष्यातील प्रकल्प",
+            name: "Projects",
+            marathiname: "प्रकल्प",
             classis: "",
             link: "#/futureproject",
             color: "#007A31",
             icon: "glyphicon-send",
             left: "51.66190488337574px",
             top: "238.3380951166243px",
-            text_left: "26.991071656329524px",
+            text_left: "56.991072px",
             text_top: "410.28531726798843px",
 
                       },
         {
             name: "What We Do",
-            marathiname:"आपण काय",
+            marathiname: "आपण काय",
             classis: "",
             link: "#/whatwedo",
             color: "rgb(174, 0, 25)",
@@ -94,7 +94,7 @@ var navigationservice = angular.module('navigationservice', [])
                       },
         {
             name: "About",
-            marathiname:"विषयी",
+            marathiname: "विषयी",
             classis: "",
             link: "#/about",
             color: "#007A31",
@@ -123,13 +123,29 @@ var navigationservice = angular.module('navigationservice', [])
             return menuname;
         },
         changenavigationclass: function (classname) {
-            navigationclass=classname;
+            navigationclass = classname;
             return navigationclass;
         },
         getarticle: function (articleid) {
-            return $http.post('http://webmeister.in/nareshwadi/REST/API.aspx/GetArticleByID',{id:articleid});
+            return $http.post('http://180.179.50.116/nareshwadi/REST/API.aspx/GetArticleByID', {
+                id: articleid
+            });
+        },
+        getallproductcategory: function () {
+            return $http.post('http://180.179.50.116/nareshwadi/rest/API.aspx/GetProductCategoryAll', {});
+        },
+        getallproductsincategory: function (id) {
+            return $http.post('http://180.179.50.116/nareshwadi/rest/API.aspx/GetProductByCategoryID', {
+                ID: id
+            });
+        },
+        getgallerycategory: function (id) {
+            return $http.post('http://180.179.50.116/nareshwadi/rest/API.aspx/GetGalleryCategoryAll', {});
+        },
+        getcategoryimage: function (id) {
+        console.log(id);
+            return $http.post('http://180.179.50.116/nareshwadi/rest/API.aspx/GetGalleryByCategoryID', {id:id});
         }
 
     }
 });
-

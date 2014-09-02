@@ -1,0 +1,26 @@
+<div class="internalpage animated slideInRight">
+    <div class="internal">
+        
+        <div class="row">
+            <div class="col-md-3">
+                <ul class="nav nav-pills nav-stacked gallerycat">
+
+                    <li ng-class="category.active" ng-repeat="category in content | orderBy:category.Title"><a ng-click="fetchproducts(category.GalleryID,category.Title,$index)">{{category.Title}}</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-9">
+                <h2>{{GalleryTitle}}</h2>
+               <div class="row">
+                   <div class="col-md-4 gallerydiv" ng-repeat="image in galleryimages"><img src="{{'http://180.179.50.116/nareshwadi/media/images/content/'+image.Source}}" class="img img-thumbnail galleryimage" ng-click="addblackout('http://180.179.50.116/nareshwadi/media/images/content/'+image.Source)"></div>
+               </div>
+        
+            </div>
+
+        </div>
+    </div>
+    
+</div>
+<div class="blackout animated slideInLeft" ng-hide="blackoutimage==''">
+    <img src="{{blackoutimage}}" class="img-thumbnail" ng-click="removeblackout()">
+</div>
