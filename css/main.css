@@ -1,4 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Allura);
+@import url(http://fonts.googleapis.com/css?family=Gloria+Hallelujah);
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,700);
 @import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700);
 body {
@@ -19,7 +20,7 @@ a:hover {
     color:#AE0019;
 }
 .logo a:hover{
-	text-decoration:none;
+    text-decoration:none;
 }
 .homemod a {
     text-decoration: none;
@@ -108,7 +109,7 @@ div.circle3 {
     left: 70px;
     top: 69px;
     -webkit-animation: rotatelogo 10s linear 0s infinite normal;
-	animation: rotatelogo 10s linear 2s infinite normal;
+    animation: rotatelogo 10s linear 2s infinite normal;
 }
 .circle3 img {
     width: 195px;
@@ -236,14 +237,14 @@ div.footer {
 } 
 
 @-webkit-keyframes rotatelogo {
-	from {-webkit-transform: rotate(0deg);}
-   
-	to {-webkit-transform: rotate(360deg);}
+    from {-webkit-transform: rotate(0deg);}
+
+    to {-webkit-transform: rotate(360deg);}
 }
 @keyframes rotatelogo {
-	from {transform: rotate(0deg);}
-   
-	to {transform: rotate(360deg);}
+    from {transform: rotate(0deg);}
+
+    to {transform: rotate(360deg);}
 }
 .galleryimage {
     margin-bottom: 10px;
@@ -278,8 +279,8 @@ ul.gallerycat li {
     cursor: pointer;
 }
 q {
-    font-family: 'Allura', cursive;
-    font-size: 30px;
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size: 22px;
     color: #ae0019;
     quotes: "“""”""‘""’";
     padding: 0px 20px;
@@ -292,8 +293,10 @@ q:after {
 }
 .quotes {
     position: absolute;
-    left: 400px;
+    left: 370px;
     margin-top: 55px;
+    width: 855px;
+    text-align: center;
 }
 .slider {
     margin: 10px 0 30px;
