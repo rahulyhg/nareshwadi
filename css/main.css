@@ -1,5 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Allura);
-@import url(http://fonts.googleapis.com/css?family=Gloria+Hallelujah);
+@import url(http://fonts.googleapis.com/css?family=Indie+Flower);
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,700);
 @import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700);
 body {
@@ -279,8 +279,8 @@ ul.gallerycat li {
     cursor: pointer;
 }
 q {
-    font-family: 'Gloria Hallelujah', cursive;
-    font-size: 22px;
+    font-family: 'Indie Flower', cursive;
+    font-size: 28px;
     color: #ae0019;
     quotes: "“""”""‘""’";
     padding: 0px 20px;
