@@ -8,6 +8,15 @@ phonecatControllers.controller('home', ['$scope', 'TemplateService', 'Navigation
         TemplateService.title = $scope.menutitle;
         $scope.navigation = NavigationService.getnav();
         $scope.navigationclass = "smaller";
+        var slides = $scope.slides = [{
+            image: "img/slider/022.jpg"
+      }, {
+            image: "img/slider/021.jpg"
+      }, {
+            image: "img/slider/020.jpg"
+      }, {
+            image: "img/slider/019.jpg"
+      }];
   }]);
 
 phonecatControllers.controller('shop', ['$scope', 'TemplateService', 'NavigationService',
@@ -36,6 +45,16 @@ function ($scope, TemplateService, NavigationService) {
             NavigationService.getallproductsincategory(id).success(productfetched);
         };
 
+        var slides = $scope.slides = [{
+            image: "img/slider/015.jpg"
+    }, {
+            image: "img/slider/017.jpg"
+    }, {
+            image: "img/slider/016.jpg"
+    }, {
+            image: "img/slider/018.jpg"
+    }];
+
 }]);
 
 phonecatControllers.controller('contact', ['$scope', 'TemplateService', 'NavigationService',
@@ -52,8 +71,21 @@ phonecatControllers.controller('contact', ['$scope', 'TemplateService', 'Navigat
             console.log(newdata);
             $scope.content = newdata;
         };
+        var slides = $scope.slides = [{
+            image: "img/slider/018.jpg"
+                                            }, {
+            image: "img/slider/017.jpg"
+                                            }, {
+            image: "img/slider/001.jpg"
+                                            }, {
+            image: "img/slider/002.jpg"
+                                            }];
+
         NavigationService.getarticle(6).success(articlesuccess);
-                                        }]);
+
+
+}]);
+
 phonecatControllers.controller('gallery', ['$scope', 'TemplateService', 'NavigationService',
                                         function ($scope, TemplateService, NavigationService) {
         $scope.template = TemplateService;
@@ -67,8 +99,8 @@ phonecatControllers.controller('gallery', ['$scope', 'TemplateService', 'Navigat
             var newdata = JSON.parse(data.d)
             console.log(newdata);
             $scope.content = newdata;
-            $scope.fetchproducts(newdata[0].GalleryID, newdata[0].Title,0);
-            
+            $scope.fetchproducts(newdata[0].GalleryID, newdata[0].Title, 0);
+
         };
         NavigationService.getgallerycategory().success(gotgallerycategory);
         $scope.blackoutimage = "";
@@ -86,12 +118,13 @@ phonecatControllers.controller('gallery', ['$scope', 'TemplateService', 'Navigat
 
         };
 
-        $scope.fetchproducts = function (category, title,id) {
-            for(var i=0;i<$scope.content.length;i++)
-            {$scope.content[i].active="";}
-            
-            $scope.content[id].active="active";
-            
+        $scope.fetchproducts = function (category, title, id) {
+            for (var i = 0; i < $scope.content.length; i++) {
+                $scope.content[i].active = "";
+            }
+
+            $scope.content[id].active = "active";
+
             $scope.GalleryTitle = title;
             NavigationService.getcategoryimage(category).success(gotgalleryimages);
         };
@@ -116,6 +149,15 @@ phonecatControllers.controller('donate', ['$scope', 'TemplateService', 'Navigati
 
         };
         NavigationService.getarticle(5).success(articlesuccess);
+        var slides = $scope.slides = [{
+            image: "img/slider/012.jpg"
+                                               }, {
+            image: "img/slider/013.jpg"
+                                               }, {
+            image: "img/slider/014.jpg"
+                                               }, {
+            image: "img/slider/011.jpg"
+                                               }];
 
                                            }]);
 phonecatControllers.controller('futureproject', ['$scope', 'TemplateService', 'NavigationService',
@@ -135,6 +177,15 @@ phonecatControllers.controller('futureproject', ['$scope', 'TemplateService', 'N
 
         };
         NavigationService.getarticle(3).success(articlesuccess);
+        var slides = $scope.slides = [{
+            image: "img/slider/014.jpg"
+                                            }, {
+            image: "img/slider/013.jpg"
+                                            }, {
+            image: "img/slider/012.jpg"
+                                            }, {
+            image: "img/slider/011.jpg"
+                                            }];
                                         }]);
 phonecatControllers.controller('whatwedo', ['$scope', 'TemplateService', 'NavigationService',
                                         function ($scope, TemplateService, NavigationService) {
@@ -153,6 +204,17 @@ phonecatControllers.controller('whatwedo', ['$scope', 'TemplateService', 'Naviga
 
         };
         NavigationService.getarticle(2).success(articlesuccess);
+                                            
+                                            var slides = $scope.slides = [{
+                                                image: "img/slider/010.jpg"
+                                            }, {
+                                                image: "img/slider/009.jpg"
+                                            }, {
+                                                image: "img/slider/008.jpg"
+                                            }, {
+                                                image: "img/slider/007.jpg"
+                                            }];
+                                            
                                         }]);
 phonecatControllers.controller('about', ['$scope', 'TemplateService', 'NavigationService',
                                             function ($scope, TemplateService, NavigationService) {
@@ -171,6 +233,18 @@ phonecatControllers.controller('about', ['$scope', 'TemplateService', 'Navigatio
 
         };
         NavigationService.getarticle(1).success(articlesuccess);
+                                                
+                                                var slides = $scope.slides = [{
+                                                    image: "img/slider/006.jpg"
+                                                }, {
+                                                    image: "img/slider/005.jpg"
+                                                }, {
+                                                    image: "img/slider/004.jpg"
+                                                }, {
+                                                    image: "img/slider/003.jpg"
+                                                }];
+
+                                                
                                             }]);
 
 phonecatControllers.controller('headerctrl', ['$scope', 'TemplateService',
@@ -181,12 +255,8 @@ phonecatControllers.controller('headerctrl', ['$scope', 'TemplateService',
 phonecatControllers.controller('slidectrl', ['$scope', 'TemplateService',
  function ($scope, TemplateService) {
         $scope.template = TemplateService;
-             $scope.myInterval = 5000;
-     var slides = $scope.slides = [{
-         image: "img/slider1.jpg"
-     }, {
-         image: "img/slider2.jpg"
-     }];
+        $scope.myInterval = 5000;
+
 
 
   }]);
