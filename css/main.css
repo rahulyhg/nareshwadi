@@ -278,23 +278,31 @@ ul.gallerycat li {
     text-align: center;
     cursor: pointer;
 }
-q {
-    font-family: 'Merienda One', cursive;
-    font-size: 22px;
+blockquote {
+    display: inline-block; /* this and width auto make the width fit the size of the text */
+    width: auto;
+    margin: 1em;
+    border: 0px;
+    border-radius: 2px;
+    font-family: 'Merienda One', cursive;     
+    font-size: 19px;     color: #ae0019;
+}
+blockquote:before {
+    font-size: 30px;          
     color: #ae0019;
-    quotes: "“""”""‘""’";
-    padding: 0px 20px;
-}
-q:before {
     content: open-quote;
+    vertical-align: -0.25em;
 }
-q:after {
+blockquote:after {
+    font-size: 30px;
+    color: #ae0019;
     content: close-quote;
+    vertical-align: -0.25em;
 }
 .quotes {
     position: absolute;
     left: 370px;
-    margin-top: 55px;
+    margin-top: 10px;
     width: 855px;
     text-align: center;
 }
