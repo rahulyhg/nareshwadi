@@ -41,19 +41,7 @@ var navigationservice = angular.module('navigationservice', [])
             text_left: "472.5px",
             text_top: "262.5px",
 
-    }, {
-            name: "Gallery",
-            marathiname: "प्रतिमा",
-            classis: "",
-            link: "#/gallery",
-            color: "#007A31",
-            icon: "glyphicon-camera",
-            left: "238.3380951166243px",
-            top: "238.33809511662423px",
-            text_left: "400.00892834367056px",
-            text_top: "410.2853172679884px",
-
-    }, {
+    },  {
             name: "Donate",
             marathiname: "दान",
             classis: "",
