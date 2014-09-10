@@ -301,3 +301,11 @@ q:after {
 .slider {
     margin: 10px 0 30px;
 }
+.carousel-inner>.item>img {
+    padding: 4px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}

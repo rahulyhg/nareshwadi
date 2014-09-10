@@ -183,9 +183,9 @@ phonecatControllers.controller('slidectrl', ['$scope', 'TemplateService',
         $scope.template = TemplateService;
              $scope.myInterval = 5000;
      var slides = $scope.slides = [{
-         image: "img/bg1.jpg"
+         image: "img/slider1.jpg"
      }, {
-         image: "img/bg2.jpg"
+         image: "img/slider2.jpg"
      }];
 
 
