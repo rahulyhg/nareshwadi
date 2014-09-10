@@ -2,7 +2,7 @@
 @import url(http://fonts.googleapis.com/css?family=Merienda+One);
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,700);
 @import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700);
-body {
+ body {
     font-family: "Open Sans";
 }
 .header {
@@ -14,19 +14,19 @@ h3,
     font-weight: bold;
 }
 a {
-    color:#AE0019;
+    color: #AE0019;
 }
 a:hover {
-    color:#AE0019;
+    color: #AE0019;
 }
-.logo a:hover{
-    text-decoration:none;
+.logo a:hover {
+    text-decoration: none;
 }
 .homemod a {
     text-decoration: none;
 }
 .homemod p {
-    color:#007A31;
+    color: #007A31;
     font-size: 13px;
 }
 p {
@@ -37,6 +37,7 @@ p {
 .navigation.smaller {
     margin-left: 2%;
     zoom: 55%;
+    -moz-transform: scale(.55);
     margin-top: -210px;
 }
 .navigation.smaller .circle1 {
@@ -184,7 +185,7 @@ div.footer {
     background: rgba(220, 109, 0, 0.06);
     border-radius: 4px;
     margin-bottom: 30px;
-    box-shadow: 2px 2px 15px #888;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
 }
 .internalpage .internal {
     padding: 25px;
@@ -208,9 +209,13 @@ div.footer {
     font-family: 'Allura', cursive;
     font-weight: bold;
     letter-spacing: 2px;
+    display: block;
+    margin-top: 25px;
 }
-.internal ul li {
+.internal ul,
+.internal ol {
     color: #007931;
+    line-height: 200%;
 }
 .language {
     position: absolute;
@@ -221,9 +226,9 @@ div.footer {
     padding: 15px;
     margin-right: 10px;
     border-radius: 33px;
-    color:white;
+    color: white;
     z-index: 10;
-    cursor:pointer;
+    cursor: pointer;
 }
 .container {
     position: relative;
@@ -231,36 +236,41 @@ div.footer {
 .language.english {
     right: 94px;
 }
-
-.language:hover,.language.active {
-    background:#ae0019;
-} 
-
+.language:hover,
+.language.active {
+    background: #ae0019;
+}
 @-webkit-keyframes rotatelogo {
-    from {-webkit-transform: rotate(0deg);}
-
-    to {-webkit-transform: rotate(360deg);}
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+    }
 }
 @keyframes rotatelogo {
-    from {transform: rotate(0deg);}
-
-    to {transform: rotate(360deg);}
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 .galleryimage {
     margin-bottom: 10px;
-    -webkit-transition:all 0.4s;
-    -webkit-filter:grayscale(0.8);
+    -webkit-transition: all 0.4s;
+    -webkit-filter: grayscale(0.8);
     cursor: pointer;
 }
 .galleryimage:hover {
-    -webkit-filter:grayscale(0);
+    -webkit-filter: grayscale(0);
 }
 .gallerydiv {
     min-height: 220px;
 }
 .blackout {
     position: fixed;
-    background: rgba(0,0,0,0.7);
+    background: rgba(0, 0, 0, 0.7);
     width: 100%;
     height: 100%;
     top: 0px;
@@ -279,16 +289,18 @@ ul.gallerycat li {
     cursor: pointer;
 }
 blockquote {
-    display: inline-block; /* this and width auto make the width fit the size of the text */
+    display: inline-block;
+    /* this and width auto make the width fit the size of the text */
     width: auto;
     margin: 1em;
     border: 0px;
     border-radius: 2px;
-    font-family: 'Merienda One', cursive;     
-    font-size: 19px;     color: #ae0019;
+    font-family: 'Merienda One', cursive;
+    font-size: 19px;
+    color: #ae0019;
 }
 blockquote:before {
-    font-size: 30px;          
+    font-size: 30px;
     color: #ae0019;
     content: open-quote;
     vertical-align: -0.25em;
@@ -316,4 +328,8 @@ blockquote:after {
     border-radius: 4px;
     -webkit-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
+}
+.shadow {
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
 }
