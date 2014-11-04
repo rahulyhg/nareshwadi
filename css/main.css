@@ -333,3 +333,41 @@ blockquote:after {
 .shadow {
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
 }
+.shopper h3 {
+    color: #AE0019;
+    font-size: 29px;
+    letter-spacing: 0px;
+    display: block;
+    margin-top: 20px;
+    font-family: 'Allura', cursive;
+    font-weight: 400;
+}
+.shopper h5 {
+    color: #027c31;
+    font-size: 26px;
+    font-weight: normal;
+    letter-spacing: 1px;
+    display: block;
+    margin-top: 10px;
+}
+.shopper {
+    text-align: center;
+    margin-top: 35px;
+}
+.shopper img {
+    border-radius: 4px;
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.3);
+}
+.shopper-cat {
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: normal;
+    font-variant: small-caps;
+    padding-bottom: 5px;
+    border-bottom: 1px dashed #00450E;
+}
+.nav>li>a:hover,
+.nav>li>a:focus {
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.75);
+}
