@@ -205,12 +205,12 @@ div.footer {
 .internal h4,
 .internal h5 {
     color: #AE0019;
-    font-size: 29px;
+    font-size: 26px;
     font-family: 'Allura', cursive;
-    font-weight: bold;
-    letter-spacing: 2px;
+    font-weight: normal;
+    letter-spacing: 1px;
     display: block;
-    margin-top: 25px;
+    margin-top: 15px;
 }
 .internal ul,
 .internal ol {
