@@ -35,9 +35,9 @@ p {
     text-align: justify;
 }
 .navigation.smaller {
-    margin-left: 2%;
+    margin: 0 0 0 2%;
     zoom: 55%;
-    -moz-transform: scale(.55);
+    -moz-transform: scale(0.55) translateX(-205px) !important;
     margin-top: -210px;
 }
 .navigation.smaller .circle1 {
@@ -250,9 +250,11 @@ div.footer {
 }
 @keyframes rotatelogo {
     from {
+        -webkit-transform: rotate(0deg);
         transform: rotate(0deg);
     }
     to {
+        -webkit-transform: rotate(360deg);
         transform: rotate(360deg);
     }
 }
@@ -320,6 +322,7 @@ blockquote:after {
 }
 .slider {
     margin: 10px 0 30px;
+    -moz-transform: translateY(-120px);
 }
 .carousel-inner>.item>img {
     padding: 4px;
@@ -335,12 +338,13 @@ blockquote:after {
 }
 .shopper h3 {
     color: #AE0019;
-    font-size: 29px;
+    font-size: 26px;
     letter-spacing: 0px;
     display: block;
     margin-top: 20px;
     font-family: 'Allura', cursive;
     font-weight: 400;
+    height: 30px; overflow: hidden;
 }
 .shopper h5 {
     color: #027c31;
@@ -357,6 +361,9 @@ blockquote:after {
 .shopper img {
     border-radius: 4px;
     box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.3);
+}
+.shopper>div {
+    margin-bottom: 30px;
 }
 .shopper-cat {
     cursor: pointer;
