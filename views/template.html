@@ -30,13 +30,13 @@
     <div class="navigation {{navigationclass}} animated fadeInLeft">
         <div class="circle1">
             <div class="innercircle">
-                <div class="nav1" ng-repeat="menu in navigation" style="left:{{menu.text_left}};top:{{menu.text_top}};"> <a href="{{menu.link}}" class="nav2" style="color:{{menu.color}};"><span class="glyphicon glyphicon-fire"></span> <span ng-show="template.englishactive=='active'">{{menu.name}}</span><span ng-show="template.marathiactive=='active'">{{menu.marathiname}}</span></a> 
+                <div class="nav1" ng-repeat="menu in navigation" ng-style="{'left':menu.text_left,'top':menu.text_top}"> <a href="{{menu.link}}" class="nav2" ng-style="{'color':menu.color};"><span class="glyphicon glyphicon-fire"></span> <span ng-show="template.englishactive=='active'">{{menu.name}}</span><span ng-show="template.marathiactive=='active'">{{menu.marathiname}}</span></a> 
                 </div>
             </div>
         </div>
         <div class="circle2">
             <div class="innercircle">
-                <div class="nav1" ng-repeat="menu in navigation" style="left:{{menu.left}};top:{{menu.top}};"> <a href="{{menu.link}}"><span class="glyphicon {{menu.icon}}"></span></a> 
+                <div class="nav1" ng-repeat="menu in navigation" ng-style="{'left':menu.left,'top':menu.top}"> <a href="{{menu.link}}"><span class="glyphicon {{menu.icon}}"></span></a> 
                 </div>
 
                 <div class="circle3">
