@@ -185,9 +185,13 @@ phonecatControllers.controller('futureproject', ['$scope', 'TemplateService', 'N
         };
         NavigationService.getarticle(3).success(articlesuccess);
         var slides = $scope.slides = [{
-            image: "img/slider/014.jpg"
+            image: "img/slider/024.jpg"
         }, {
+            image: "img/slider/025.jpg"
+        },{
             image: "img/slider/013.jpg"
+        },{
+            image: "img/slider/011.jpg"
         }, {
             image: "img/slider/012.jpg"
         }, {
