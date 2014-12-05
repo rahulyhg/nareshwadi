@@ -42,6 +42,10 @@ firstapp.config(['$routeProvider',
             templateUrl: 'views/template.html',
             controller: 'about'
         }).
+        when('/events', {
+            templateUrl: 'views/template.html',
+            controller: 'events'
+        }).
 
         otherwise({
             redirectTo: '/home'

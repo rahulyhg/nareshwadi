@@ -29,6 +29,9 @@ a:hover {
     color: #007A31;
     font-size: 13px;
 }
+.homemod h3 {
+    padding-bottom: 30px;
+}
 p {
     font-size: 12px;
     line-height: 180%;
@@ -344,7 +347,8 @@ blockquote:after {
     margin-top: 20px;
     font-family: 'Allura', cursive;
     font-weight: 400;
-    height: 30px; overflow: hidden;
+    height: 30px;
+    overflow: hidden;
 }
 .shopper h5 {
     color: #027c31;

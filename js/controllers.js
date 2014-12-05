@@ -229,6 +229,38 @@ phonecatControllers.controller('whatwedo', ['$scope', 'TemplateService', 'Naviga
 
     }
 ]);
+
+phonecatControllers.controller('events', ['$scope', 'TemplateService', 'NavigationService',
+    function($scope, TemplateService, NavigationService) {
+        $scope.template = TemplateService;
+        TemplateService.content = "views/internalcontent.html";
+        $scope.menutitle = NavigationService.makeactive("Events");
+        TemplateService.title = $scope.menutitle;
+        $scope.navigation = NavigationService.getnav();
+
+        $scope.navigationclass = "smaller";
+        var articlesuccess = function(data, status) {
+            var newdata = JSON.parse(data.d)
+            console.log(newdata);
+            $scope.content = newdata;
+
+
+        };
+        NavigationService.getarticle(9).success(articlesuccess);
+
+        var slides = $scope.slides = [{
+            image: "img/slider/010.jpg"
+        }, {
+            image: "img/slider/009.jpg"
+        }, {
+            image: "img/slider/008.jpg"
+        }, {
+            image: "img/slider/007.jpg"
+        }];
+
+    }
+]);
+
 phonecatControllers.controller('about', ['$scope', 'TemplateService', 'NavigationService',
     function($scope, TemplateService, NavigationService) {
         $scope.template = TemplateService;
