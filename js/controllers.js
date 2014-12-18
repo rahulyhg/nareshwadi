@@ -1,7 +1,7 @@
 var phonecatControllers = angular.module('phonecatControllers', ['templateservicemod', 'navigationservice']);
 
 phonecatControllers.controller('home', ['$scope', 'TemplateService', 'NavigationService',
-    function($scope, TemplateService, NavigationService, $location) {
+    function ($scope, TemplateService, NavigationService, $location) {
         $scope.template = TemplateService;
         TemplateService.content = "views/content.html";
         $scope.menutitle = NavigationService.makeactive("Home");
@@ -23,7 +23,7 @@ phonecatControllers.controller('home', ['$scope', 'TemplateService', 'Navigation
 ]);
 
 phonecatControllers.controller('shop', ['$scope', 'TemplateService', 'NavigationService',
-    function($scope, TemplateService, NavigationService) {
+    function ($scope, TemplateService, NavigationService) {
         $scope.template = TemplateService;
         TemplateService.content = "views/shop.html";
         $scope.menutitle = NavigationService.makeactive("Home");
@@ -31,7 +31,7 @@ phonecatControllers.controller('shop', ['$scope', 'TemplateService', 'Navigation
         $scope.navigation = NavigationService.getnav();
 
         $scope.navigationclass = "smaller";
-        var categorysuccess = function(data, status) {
+        var categorysuccess = function (data, status) {
             var newdata = JSON.parse(data.d)
             console.log(newdata);
             $scope.content = newdata;
@@ -39,12 +39,12 @@ phonecatControllers.controller('shop', ['$scope', 'TemplateService', 'Navigation
 
         NavigationService.getallproductcategory().success(categorysuccess);
 
-        var productfetched = function(data, status) {
+        var productfetched = function (data, status) {
             var newdata = JSON.parse(data.d)
             console.log(newdata);
             $scope.products = newdata;
         };
-        $scope.fetchproducts = function(id) {
+        $scope.fetchproducts = function (id) {
             NavigationService.getallproductsincategory(id).success(productfetched);
         };
 
@@ -62,7 +62,7 @@ phonecatControllers.controller('shop', ['$scope', 'TemplateService', 'Navigation
 ]);
 
 phonecatControllers.controller('contact', ['$scope', 'TemplateService', 'NavigationService',
-    function($scope, TemplateService, NavigationService) {
+    function ($scope, TemplateService, NavigationService) {
         $scope.template = TemplateService;
         TemplateService.content = "views/internalcontent.html";
         $scope.menutitle = NavigationService.makeactive("Home");
@@ -70,7 +70,7 @@ phonecatControllers.controller('contact', ['$scope', 'TemplateService', 'Navigat
         $scope.navigation = NavigationService.getnav();
 
         $scope.navigationclass = "smaller";
-        var articlesuccess = function(data, status) {
+        var articlesuccess = function (data, status) {
             var newdata = JSON.parse(data.d);
             console.log(newdata);
             $scope.content = newdata;
@@ -92,7 +92,7 @@ phonecatControllers.controller('contact', ['$scope', 'TemplateService', 'Navigat
 ]);
 
 phonecatControllers.controller('gallery', ['$scope', 'TemplateService', 'NavigationService',
-    function($scope, TemplateService, NavigationService) {
+    function ($scope, TemplateService, NavigationService) {
         $scope.template = TemplateService;
         TemplateService.content = "views/gallery.html";
         $scope.menutitle = NavigationService.makeactive("Home");
@@ -100,7 +100,7 @@ phonecatControllers.controller('gallery', ['$scope', 'TemplateService', 'Navigat
         $scope.navigation = NavigationService.getnav();
 
         $scope.navigationclass = "smaller";
-        var gotgallerycategory = function(data, status) {
+        var gotgallerycategory = function (data, status) {
             var newdata = JSON.parse(data.d)
             console.log(newdata);
             $scope.content = newdata;
@@ -109,21 +109,21 @@ phonecatControllers.controller('gallery', ['$scope', 'TemplateService', 'Navigat
         };
         NavigationService.getgallerycategory().success(gotgallerycategory);
         $scope.blackoutimage = "";
-        $scope.addblackout = function(img) {
+        $scope.addblackout = function (img) {
             $scope.blackoutimage = img;
         }
-        $scope.removeblackout = function() {
+        $scope.removeblackout = function () {
             $scope.blackoutimage = "";
         }
 
-        var gotgalleryimages = function(data, status) {
+        var gotgalleryimages = function (data, status) {
             var newdata = JSON.parse(data.d)
             console.log(newdata);
             $scope.galleryimages = newdata;
 
         };
 
-        $scope.fetchproducts = function(category, title, id) {
+        $scope.fetchproducts = function (category, title, id) {
             for (var i = 0; i < $scope.content.length; i++) {
                 $scope.content[i].active = "";
             }
@@ -139,7 +139,7 @@ phonecatControllers.controller('gallery', ['$scope', 'TemplateService', 'Navigat
     }
 ]);
 phonecatControllers.controller('donate', ['$scope', 'TemplateService', 'NavigationService',
-    function($scope, TemplateService, NavigationService) {
+    function ($scope, TemplateService, NavigationService) {
         $scope.template = TemplateService;
         TemplateService.content = "views/internalcontent.html";
         $scope.menutitle = NavigationService.makeactive("Home");
@@ -147,7 +147,7 @@ phonecatControllers.controller('donate', ['$scope', 'TemplateService', 'Navigati
         $scope.navigation = NavigationService.getnav();
 
         $scope.navigationclass = "smaller";
-        var articlesuccess = function(data, status) {
+        var articlesuccess = function (data, status) {
             var newdata = JSON.parse(data.d);
             console.log(newdata);
             $scope.content = newdata;
@@ -168,7 +168,7 @@ phonecatControllers.controller('donate', ['$scope', 'TemplateService', 'Navigati
     }
 ]);
 phonecatControllers.controller('futureproject', ['$scope', 'TemplateService', 'NavigationService',
-    function($scope, TemplateService, NavigationService) {
+    function ($scope, TemplateService, NavigationService) {
         $scope.template = TemplateService;
         TemplateService.content = "views/internalcontent.html";
         $scope.menutitle = NavigationService.makeactive("Home");
@@ -176,7 +176,7 @@ phonecatControllers.controller('futureproject', ['$scope', 'TemplateService', 'N
         $scope.navigation = NavigationService.getnav();
 
         $scope.navigationclass = "smaller";
-        var articlesuccess = function(data, status) {
+        var articlesuccess = function (data, status) {
             var newdata = JSON.parse(data.d)
             console.log(newdata);
             $scope.content = newdata;
@@ -188,9 +188,9 @@ phonecatControllers.controller('futureproject', ['$scope', 'TemplateService', 'N
             image: "img/slider/024.jpg"
         }, {
             image: "img/slider/025.jpg"
-        },{
+        }, {
             image: "img/slider/013.jpg"
-        },{
+        }, {
             image: "img/slider/011.jpg"
         }, {
             image: "img/slider/012.jpg"
@@ -200,7 +200,7 @@ phonecatControllers.controller('futureproject', ['$scope', 'TemplateService', 'N
     }
 ]);
 phonecatControllers.controller('whatwedo', ['$scope', 'TemplateService', 'NavigationService',
-    function($scope, TemplateService, NavigationService) {
+    function ($scope, TemplateService, NavigationService) {
         $scope.template = TemplateService;
         TemplateService.content = "views/internalcontent.html";
         $scope.menutitle = NavigationService.makeactive("Home");
@@ -208,7 +208,7 @@ phonecatControllers.controller('whatwedo', ['$scope', 'TemplateService', 'Naviga
         $scope.navigation = NavigationService.getnav();
 
         $scope.navigationclass = "smaller";
-        var articlesuccess = function(data, status) {
+        var articlesuccess = function (data, status) {
             var newdata = JSON.parse(data.d)
             console.log(newdata);
             $scope.content = newdata;
@@ -231,7 +231,7 @@ phonecatControllers.controller('whatwedo', ['$scope', 'TemplateService', 'Naviga
 ]);
 
 phonecatControllers.controller('events', ['$scope', 'TemplateService', 'NavigationService',
-    function($scope, TemplateService, NavigationService) {
+    function ($scope, TemplateService, NavigationService) {
         $scope.template = TemplateService;
         TemplateService.content = "views/internalcontent.html";
         $scope.menutitle = NavigationService.makeactive("Events");
@@ -239,7 +239,7 @@ phonecatControllers.controller('events', ['$scope', 'TemplateService', 'Navigati
         $scope.navigation = NavigationService.getnav();
 
         $scope.navigationclass = "smaller";
-        var articlesuccess = function(data, status) {
+        var articlesuccess = function (data, status) {
             var newdata = JSON.parse(data.d)
             console.log(newdata);
             $scope.content = newdata;
@@ -262,7 +262,7 @@ phonecatControllers.controller('events', ['$scope', 'TemplateService', 'Navigati
 ]);
 
 phonecatControllers.controller('about', ['$scope', 'TemplateService', 'NavigationService',
-    function($scope, TemplateService, NavigationService) {
+    function ($scope, TemplateService, NavigationService) {
         $scope.template = TemplateService;
         TemplateService.content = "views/internalcontent.html";
         $scope.menutitle = NavigationService.makeactive("Home");
@@ -270,7 +270,7 @@ phonecatControllers.controller('about', ['$scope', 'TemplateService', 'Navigatio
         $scope.navigation = NavigationService.getnav();
 
         $scope.navigationclass = "smaller";
-        var articlesuccess = function(data, status) {
+        var articlesuccess = function (data, status) {
             var newdata = JSON.parse(data.d)
             console.log(newdata);
             $scope.content = newdata;
@@ -294,13 +294,13 @@ phonecatControllers.controller('about', ['$scope', 'TemplateService', 'Navigatio
 ]);
 
 phonecatControllers.controller('headerctrl', ['$scope', 'TemplateService',
-    function($scope, TemplateService) {
+    function ($scope, TemplateService) {
         $scope.template = TemplateService;
     }
 ]);
 
 phonecatControllers.controller('slidectrl', ['$scope', 'TemplateService',
-    function($scope, TemplateService) {
+    function ($scope, TemplateService) {
         $scope.template = TemplateService;
         $scope.myInterval = 5000;
 
