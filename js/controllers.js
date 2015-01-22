@@ -1,4 +1,4 @@
-var phonecatControllers = angular.module('phonecatControllers', ['templateservicemod', 'navigationservice']);
+var phonecatControllers = angular.module('phonecatControllers', ['templateservicemod', 'navigationservice','ngTagsInput','ngDialog']);
 
 phonecatControllers.controller('home', ['$scope', 'TemplateService', 'NavigationService',
     function ($scope, TemplateService, NavigationService, $location) {
@@ -23,7 +23,7 @@ phonecatControllers.controller('home', ['$scope', 'TemplateService', 'Navigation
 ]);
 
 phonecatControllers.controller('shop', ['$scope', 'TemplateService', 'NavigationService',
-    function ($scope, TemplateService, NavigationService) {
+    function ($scope, TemplateService, NavigationService, ngDialog) {
         $scope.template = TemplateService;
         TemplateService.content = "views/shop.html";
         $scope.menutitle = NavigationService.makeactive("Home");
@@ -48,6 +48,14 @@ phonecatControllers.controller('shop', ['$scope', 'TemplateService', 'Navigation
             NavigationService.getallproductsincategory(id).success(productfetched);
         };
 
+        $scope.orderForm = function () {
+            console.log("Demo is wokring");
+            ngDialog.open({
+                template: 'views/order-form.html',
+            });
+        };
+        
+        
         var slides = $scope.slides = [{
             image: "img/slider/015.jpg"
         }, {
