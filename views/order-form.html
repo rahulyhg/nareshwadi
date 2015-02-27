@@ -1,5 +1,6 @@
 <div class="padder shopper" ng-controller="shop">
    <h3>Order - {{productname}}</h3>
+<!--
     <form ng-submit="">
         <input type="text" class="form-control" placeholder="Name" required>
         <input type="email" class="form-control" placeholder="Email" required>
@@ -8,4 +9,62 @@
         <textarea class="form-control" placeholder="Message"></textarea>
         <button type="submit" class="btn btn-shop">Submit</button>
     </form>
+-->
+<form  method="post" action="https://secure.ebs.in/pg/ma/payment/request"                                                  
+
+name="frmTransaction" id="frmTransaction" >
+  
+<input name="channel"  type="hidden" value="0" />  
+
+<input name="account_id" type="hidden" value=" XXXX " />  
+
+<input name="reference_no" type="hidden" value=" XXXX " />  
+
+<input name="amount" type="hidden" value=" XXXX " />  
+
+<input name="mode" type="hidden" value=" XXXX " />  
+
+<input name="currency" type="hidden" value="INR" />  
+
+<input name="description" type="hidden" value=" XXXX " />  
+
+<input name="return_url" type="hidden" value=" XXXX " />  
+
+<input name="name" type="hidden" value=" XXXX " />  
+
+<input name="address" type="hidden" value=" XXXX " />  
+
+<input name="city" type="hidden" value=" XXXX " />  
+
+<input name="state" type="hidden" value=" XXXX " />  
+
+<input name="country" type="hidden" value=" XXXX " />  
+
+<input name="postal_code" type="hidden" value=" XXXX " />  
+
+<input name="phone" type="hidden" value=" XXXX " />  
+
+<input name="email" type="hidden" value=" XXXX " />  
+
+<input name="ship_name" type="hidden" value=" XXXX " />  <input 
+
+name="ship_address" type="hidden" value=" XXXX " /> <input 
+
+name="ship_country" type="hidden" value=" XXXX " />  
+
+<input name="ship_state" type="hidden" value=" XXXX " />  
+
+<input name="ship_city" type="hidden" value=" XXXX " />  
+
+<input name="ship_postal_code" type="hidden" value=" XXXX " />  
+
+<input name="ship_phone" type="hidden" value=" XXXX " />  
+
+<input name="secure_hash" type="hidden" value=" XXXX" />  
+<!--
+
+<input value=”Submit” type=”submit” class="btn btn-shop"/>
+-->
+
+ <button type="submit" value=”Submit” class="btn btn-shop">Submit</button>
 </div>

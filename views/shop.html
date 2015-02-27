@@ -10,7 +10,60 @@
                     <img src="http://180.179.50.116/nareshwadi/media/images/content/{{product.Image}}" alt="" class="img-responsive">
                     <h3>{{product.Product}}</h3>
                     <h5>Rs.{{product.Amount}}</h5>
-                    <button class="btn btn-shop" ng-click="orderForm(product.Product);">Order Now</button>
+<!--                    <button class="btn btn-shop" ng-click="orderForm(product.Product);">Order Now</button>-->
+                   <form  method="post" action="https://secure.ebs.in/pg/ma/payment/request"                                                  
+
+name="frmTransaction" id="frmTransaction" >
+  
+<input name="channel"  type="hidden" value="10" />  
+
+<input name="account_id" type="hidden" value=" 16144
+ " />  
+
+<input name="reference_no" type="hidden" value=" 1 " />  
+
+<input name="amount" type="hidden" value=" 12.34 " />  
+
+<input name="mode" type="hidden" value="LIVE" />  
+
+<input name="currency" type="hidden" value="INR" />  
+
+<input name="description" type="hidden" value=" XXXX " />  
+
+<input name="return_url" type="hidden" value=" XXXX " />  
+
+<input name="name" type="hidden" value=" XXXX " />  
+
+<input name="address" type="hidden" value=" XXXX " />  
+
+<input name="city" type="hidden" value=" XXXX " />  
+
+<input name="state" type="hidden" value=" XXXX " />  
+
+<input name="country" type="hidden" value=" XXXX " />  
+
+<input name="postal_code" type="hidden" value=" XXXX " />  
+
+<input name="phone" type="hidden" value=" XXXX " />  
+
+<input name="email" type="hidden" value=" XXXX " />  
+
+<input name="ship_name" type="hidden" value=" XXXX " />  <input 
+
+name="ship_address" type="hidden" value=" XXXX " /> <input 
+
+name="ship_country" type="hidden" value=" XXXX " />  
+
+<input name="ship_state" type="hidden" value=" XXXX " />  
+
+<input name="ship_city" type="hidden" value=" XXXX " />  
+
+<input name="ship_postal_code" type="hidden" value=" XXXX " />  
+
+<input name="ship_phone" type="hidden" value=" XXXX " />  
+
+<input name="secure_hash" type="hidden" value=" abcdefghijklmnopqrstuvwxyz012345" />  
+                    <button type="submit" value=”Submit” class="btn btn-shop" >Order Now</button>
                 </div>
             </div>
 
