@@ -22,7 +22,7 @@ phonecatControllers.controller('home', ['$scope', 'TemplateService', 'Navigation
     }
 ]);
 
-phonecatControllers.controller('shop', ['$scope', 'TemplateService', 'NavigationService',
+phonecatControllers.controller('shop', 
     function ($scope, TemplateService, NavigationService, ngDialog) {
         $scope.template = TemplateService;
         TemplateService.content = "views/shop.html";
@@ -35,7 +35,10 @@ phonecatControllers.controller('shop', ['$scope', 'TemplateService', 'Navigation
             var newdata = JSON.parse(data.d)
             console.log(newdata);
             $scope.content = newdata;
+            $scope.fetchproducts($scope.content[0].ProductCategoryID);
         };
+        
+        
 
         NavigationService.getallproductcategory().success(categorysuccess);
 
@@ -44,14 +47,32 @@ phonecatControllers.controller('shop', ['$scope', 'TemplateService', 'Navigation
             console.log(newdata);
             $scope.products = newdata;
         };
+        
+        
         $scope.fetchproducts = function (id) {
+            for(var i=0;i<$scope.content.length;i++)
+            {
+                if(id==$scope.content[i].ProductCategoryID)
+                {
+                    $scope.content[i].active="active";
+                }
+                else
+                {
+                    $scope.content[i].active="";
+                }
+                    
+            }
             NavigationService.getallproductsincategory(id).success(productfetched);
         };
+        
+        $scope.productname="";
 
-        $scope.orderForm = function () {
-            console.log("Demo is wokring");
+        $scope.orderForm = function (productname) {
+            console.log(productname);
+            $scope.productname=productname;
             ngDialog.open({
                 template: 'views/order-form.html',
+                scope: $scope.$parent
             });
         };
         
@@ -67,7 +88,7 @@ phonecatControllers.controller('shop', ['$scope', 'TemplateService', 'Navigation
         }];
 
     }
-]);
+);
 
 phonecatControllers.controller('contact', ['$scope', 'TemplateService', 'NavigationService',
     function ($scope, TemplateService, NavigationService) {

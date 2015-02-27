@@ -1,7 +1,11 @@
-<form action="">
-    <input type="text" placeholder="Name">
-    <input type="email" placeholder="Email">
-    <input type="text" placeholder="Phone Number">
-    <input type="number" placeholder="Quantity">
-<textarea placeholder="Message"></textarea>
-</form>
+<div class="padder shopper" ng-controller="shop">
+   <h3>Order - {{productname}}</h3>
+    <form ng-submit="">
+        <input type="text" class="form-control" placeholder="Name" required>
+        <input type="email" class="form-control" placeholder="Email" required>
+        <input type="text" class="form-control" placeholder="Phone Number" required>
+        <input type="number" class="form-control" placeholder="Quantity" min="0" max="50" step="1" required>
+        <textarea class="form-control" placeholder="Message"></textarea>
+        <button type="submit" class="btn btn-shop">Submit</button>
+    </form>
+</div>

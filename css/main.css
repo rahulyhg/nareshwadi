@@ -15,6 +15,10 @@ h3,
 }
 a {
     color: #AE0019;
+    -webkit-transition: all 300ms ease;
+    -moz-transition: all 300ms ease;
+    -o-transition: all 300ms ease;
+    transition: all 300ms ease;
 }
 a:hover {
     color: #AE0019;
@@ -81,15 +85,21 @@ p {
 }
 .innercircle {
     position: relative;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
     border-radius: 100%;
 }
 .circle2 {
     background: #ae0019;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
     border-radius: 100%;
     width: 330px;
     height: 330px;
     left: 193px;
     top: 109px;
+    -webkit-box-shadow: 0px 0px 15px 1px #333;
+    -moz-box-shadow: 0px 0px 15px 1px #333;
     box-shadow: 0px 0px 15px 1px #333;
 }
 .navigation .circle2 .nav1 {
@@ -113,11 +123,17 @@ div.circle3 {
     left: 70px;
     top: 69px;
     -webkit-animation: rotatelogo 10s linear 0s infinite normal;
+    -moz-animation: rotatelogo 10s linear 2s infinite normal;
+    -o-animation: rotatelogo 10s linear 2s infinite normal;
     animation: rotatelogo 10s linear 2s infinite normal;
 }
 .circle3 img {
     width: 195px;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
     border-radius: 100%;
+    -webkit-box-shadow: 0px 0px 15px 1px #111;
+    -moz-box-shadow: 0px 0px 15px 1px #111;
     box-shadow: 0px 0px 15px 1px #111;
 }
 .circle2 .nav1 a:hover {
@@ -137,6 +153,9 @@ div.circle3 {
 }
 div.maincontent {
     background: url("../img/bricks.jpg");
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
     background-size: 100% 100%;
     background-attachment: fixed;
 }
@@ -159,14 +178,50 @@ div.maincontent {
 }
 /* Standard syntax */
 
-@keyframes rotations {
+@-moz-keyframes rotations {
     from {
+        -moz-transform: rotate(2deg);
         transform: rotate(2deg);
         -ms-transform: rotate(2deg);
         /* IE 9 */
         -webkit-transform: rotate(2deg);
     }
     to {
+        -moz-transform: rotate(-2deg);
+        transform: rotate(-2deg);
+        -ms-transform: rotate(-2deg);
+        /* IE 9 */
+        -webkit-transform: rotate(-2deg);
+    }
+}
+@-o-keyframes rotations {
+    from {
+        -o-transform: rotate(2deg);
+        transform: rotate(2deg);
+        -ms-transform: rotate(2deg);
+        /* IE 9 */
+        -webkit-transform: rotate(2deg);
+    }
+    to {
+        -o-transform: rotate(-2deg);
+        transform: rotate(-2deg);
+        -ms-transform: rotate(-2deg);
+        /* IE 9 */
+        -webkit-transform: rotate(-2deg);
+    }
+}
+@keyframes rotations {
+    from {
+        -moz-transform: rotate(2deg);
+        -o-transform: rotate(2deg);
+        transform: rotate(2deg);
+        -ms-transform: rotate(2deg);
+        /* IE 9 */
+        -webkit-transform: rotate(2deg);
+    }
+    to {
+        -moz-transform: rotate(-2deg);
+        -o-transform: rotate(-2deg);
         transform: rotate(-2deg);
         -ms-transform: rotate(-2deg);
         /* IE 9 */
@@ -186,8 +241,12 @@ div.footer {
 }
 .internalpage {
     background: rgba(220, 109, 0, 0.06);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
     border-radius: 4px;
     margin-bottom: 30px;
+    -webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
 }
 .internalpage .internal {
@@ -228,6 +287,8 @@ div.footer {
     background: #027c31;
     padding: 15px;
     margin-right: 10px;
+    -webkit-border-radius: 33px;
+    -moz-border-radius: 33px;
     border-radius: 33px;
     color: white;
     z-index: 10;
@@ -251,13 +312,41 @@ div.footer {
         -webkit-transform: rotate(360deg);
     }
 }
-@keyframes rotatelogo {
+@-moz-keyframes rotatelogo {
     from {
         -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
         transform: rotate(0deg);
     }
     to {
         -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@-o-keyframes rotatelogo {
+    from {
+        -webkit-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@keyframes rotatelogo {
+    from {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
         transform: rotate(360deg);
     }
 }
@@ -299,6 +388,8 @@ blockquote {
     width: auto;
     margin: 1em;
     border: 0px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
     border-radius: 2px;
     font-family: 'Merienda One', cursive;
     font-size: 19px;
@@ -331,12 +422,20 @@ blockquote:after {
     padding: 4px;
     background-color: #fff;
     border: 1px solid #ddd;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
     border-radius: 4px;
     -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
+    -webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
 }
 .shadow {
+    -webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
 }
 .shopper h3 {
@@ -363,7 +462,11 @@ blockquote:after {
     margin-top: 35px;
 }
 .shopper img {
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
     border-radius: 4px;
+    -webkit-box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.3);
     box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.3);
 }
 .shopper>div {
@@ -378,7 +481,37 @@ blockquote:after {
     border-bottom: 1px dashed #00450E;
 }
 .nav>li>a:hover,
-.nav>li>a:focus {
+.nav>li>a:focus,
+.nav>li.active>a {
     text-decoration: none;
-    background-color: rgba(255, 255, 255, 0.75);
+    color: white;
+    background-color: #ae0019;
+}
+button.btn-shop {
+    background: #027C31;
+    color: white;
+    font-size: 12px;
+    padding: 6px 20px;
+    -webkit-transition: all 300ms ease;
+    -moz-transition: all 300ms ease;
+    -o-transition: all 300ms ease;
+    transition: all 300ms ease;
+}
+button.btn-shop:hover,
+button.btn-shop:focus {
+    background: #056229;
+    color: white;
+    outline: 0;
+}
+.padder .form-control {
+    margin-bottom: 15px;
+}
+.ngdialog.ngdialog-theme-default {
+    padding: 50px 0 0;
+}
+.ngdialog.ngdialog-theme-default .ngdialog-content {
+    background: #FFFFFF;
+}
+.padder textarea {
+    resize: vertical;
 }

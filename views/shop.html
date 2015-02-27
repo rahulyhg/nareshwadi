@@ -1,7 +1,7 @@
 <div class="internalpage animated slideInRight">
     <div class="internal">
         <ul class="nav nav-pills categorynav shopper-cat">
-            <li ng-class="" ng-repeat="category in content"><a ng-click="fetchproducts(category.ProductCategoryID)">{{category.Name}}</a>
+            <li ng-class="category.active" ng-repeat="category in content"><a ng-click="fetchproducts(category.ProductCategoryID)">{{category.Name}}</a>
             </li>
         </ul>
            
@@ -10,7 +10,7 @@
                     <img src="http://180.179.50.116/nareshwadi/media/images/content/{{product.Image}}" alt="" class="img-responsive">
                     <h3>{{product.Product}}</h3>
                     <h5>Rs.{{product.Amount}}</h5>
-                    <button ng-click="orderForm();"></button>
+                    <button class="btn btn-shop" ng-click="orderForm(product.Product);">Order Now</button>
                 </div>
             </div>
 
